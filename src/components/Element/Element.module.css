@@ -1,0 +1,22 @@
+.paragraph {
+  margin: 0 0 12px 0;
+}
+
+.codeBlock {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #e2e2e2;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+}
+
+.quote {
+  margin: 16px 0;
+  padding-left: 16px;
+  border-left: 2px solid #e2e2e2;
+  font-style: italic;
+}
+
+.orderedListItem {
+  list-style: decimal;
+}
