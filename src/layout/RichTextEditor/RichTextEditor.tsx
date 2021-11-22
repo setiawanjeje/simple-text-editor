@@ -5,6 +5,8 @@ import { Button, Element, Leaf } from "../../components";
 import styles from "./RichTextEditor.module.css";
 import { handleToggleMark, handleToggleBlock } from "../../utils";
 import { KEY_EVENT, MARK, BLOCK } from "../../constants";
+import { BaseEditor } from "slate";
+import { ReactEditor } from "slate-react";
 
 const initValue: Descendant[] = [
   {
@@ -14,7 +16,7 @@ const initValue: Descendant[] = [
 ];
 
 const RichTextEditor = () => {
-  const editorRef = useRef();
+  const editorRef = useRef<BaseEditor & ReactEditor>();
   if (!editorRef.current) editorRef.current = withReact(createEditor());
   const editor = editorRef.current;
 

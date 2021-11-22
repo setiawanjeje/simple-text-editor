@@ -1,4 +1,4 @@
-import { Transforms, Editor, Text, BaseEditor } from "slate";
+import { Transforms, Editor, Text, BaseEditor, Element } from "slate";
 import { ReactEditor } from "slate-react";
 
 export const isMarkActive = (
@@ -6,6 +6,7 @@ export const isMarkActive = (
   mark: string
 ) => {
   const [match] = Editor.nodes(editor, {
+    // @ts-ignore
     match: (n) => n[mark],
     universal: true,
   });
@@ -29,7 +30,7 @@ export const isBlockActive = (
   block: string
 ) => {
   const [match] = Editor.nodes(editor, {
-    match: (n) => n.type === block,
+    match: (n) => Element.isElement(n) && n.type === block,
   });
   return !!match;
 };
